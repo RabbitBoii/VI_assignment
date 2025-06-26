@@ -1,16 +1,27 @@
-<<<<<<< HEAD
-# React + Vite
+# Product Table
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Product Table built in **React** that allows users to show product based data in form of table, also providing them functionalities such as filters for data.
 
-Currently, two official plugins are available:
+<a href= "https://vi-assignment-eta.vercel.app/" >Deployed URL </a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Features 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# VI_assignment
->>>>>>> 96daccf9f09f2d99b70810d90b06759d7bd94ec7
+- Fetch product data from an API and showcase it in a tabular form.
+- Filter products by **Brand, Category, Price (less than or equal to)**, and **Rating (greater than or equal to).**
+- Edit product titles inline in the table.
+- Delete product rows.
+- Reset all filter controls with a button.
+- A clean, responsive UI styled with **Tailwind CSS**.
+
+
+## Setup Instructions 
+ 
+For installation, simply clone the repository then install the dependencies using 
+
+``` npm install ```
+
+then start the application using 
+
+``` npm run dev ```
+
