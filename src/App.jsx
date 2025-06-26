@@ -6,7 +6,7 @@ import {
 function App() {
   const [data, setData] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [filters, setFilters] = useState({ brand: "", category: "", maxPrice: "" });
+  const [filters, setFilters] = useState({ brand: "", category: "", price: "", rating: "" });
 
   // On mount: fetch → cache → then (after delay) reload from cache
   useEffect(() => {
@@ -41,12 +41,13 @@ function App() {
     applyFilters(data, nextFilters);
   };
 
-  const applyFilters = (list, { brand, category, price }) => {
+  const applyFilters = (list, { brand, category, price, rating }) => {
     const result = list.filter(item => {
       return (
         (!brand || item.brand === brand) &&
         (!category || item.category === category) &&
-        (!price || item.price <= parseFloat(maxPrice))
+        (!price || item.price <= parseFloat(price)) &&
+        (!rating || item.rating >= parseFloat(rating))
       );
     });
     setFiltered(result);
@@ -97,12 +98,10 @@ function App() {
         <label style={{ marginLeft: 12 }}>
           Price:
 
-          <input
-            type="number"
-            value={filters.maxPrice}
-            onChange={(e) => handleFilterChange("maxPrice", e.target.value)}
-            placeholder="e.g., 500"
-            min="0"
+          <input type="number"
+            value={filters.price}
+            onChange={e => handleFilterChange("price", e.target.value)}
+            placeholder="e.g. $100"
           />
           {/* <select
             value={filters.price}
@@ -117,6 +116,15 @@ function App() {
           </select> */}
         </label>
 
+        <label style={{ marginLeft: 12 }}>
+          Rating:
+          <input type="number"
+            value={filters.rating}
+            onChange={e => handleFilterChange("rating", e.target.value)}
+            placeholder="e.g. 1"
+
+          />
+        </label>
 
 
       </div>
